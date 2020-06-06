@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+- Name:  Matthew S. Hartstein
+- ID:	 010567629
+- Title: GPU Programming: Lab #7 (Histogramming)
+- Date:  Spring 2020
+-------------------------------------------------------------------------------
+1.) A description of the optimization:
+	- Baseline
+		- Input size 	 = 1000000
+		- Number of bins = 4096
+		- Kernel time	 = 0.000637 seconds
+	- Description:
+		- Reads in every value from input elements, then increases the
+		  histogram by using global memory atomic functionality.
+
+2.) Any difficulties you had with completing the optimization correctly:
+	- Dynamically declaring shared memory.
+	- For loops and correct variable assignments/values.
+
+3.) The change in execution time after the optimization was applied:
+	- Before = 0.000637 seconds
+	- After  = 0.000225 seconds
+	- Delta ~= 3x (speed up)
+
+4.) An explanation of why you think the optimization helped or hurt performance:
+	- Since there is a speed up gain of 3x, I believe the optimization helped
+	  the performance of my program. Although, it seems to stop running in
+	  parallel, which can slow things down due to SM processes.
